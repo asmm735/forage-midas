@@ -1,2 +1,12 @@
 general:
   kafka-topic: midas-topic
+
+spring:
+  kafka:
+    consumer:
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: com.jpmc.midascore.foundation
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
