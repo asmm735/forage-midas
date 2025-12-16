@@ -20,8 +20,6 @@ public class BalanceController {
     public Balance getBalance(@RequestParam("userId") String userId) {
         UserRecord user = userRepository.findById(userId).orElse(null);
         if (user == null) {
-            return new Balance(0.0);
-        }
-        return new Balance(user.getBalance());
-    }
+return new Balance((float) 0.0);        }
+return new Balance((float) user.getBalance());    }
 }
